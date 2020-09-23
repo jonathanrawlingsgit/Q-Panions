@@ -1,0 +1,66 @@
+[
+    {
+      "id": 0,
+      "name": "SeV",
+      "desc": "Xbox",
+      "image": "1.jpg",
+      "likedUsers": [],
+      "dislikedUsers": [],
+      "likedBy": []
+    },
+    {
+      "id": 1,
+      "name": "HUNTER4546",
+      "desc": "PC",
+      "image": "2.jpg",
+      "likedUsers": [],
+      "dislikedUsers": [],
+      "likedBy": []
+    },
+    {
+      "id": 2,
+      "name": "EmilyPrincess94",
+      "desc": "PS4",
+      "image": "3.jpg",
+      "likedUsers": [],
+      "dislikedUsers": [],
+      "likedBy": []
+    },
+    {
+      "id": 3,
+      "name": "Mbot sniper",
+      "desc": "Switch",
+      "image": "4.jpg",
+      "likedUsers": [],
+      "dislikedUsers": [],
+      "likedBy": []
+    },
+    {
+      "id": 4,
+      "name": "DwightKSHR",
+      "desc": "Xbox",
+      "image": "5.jpg",
+      "likedUsers": [],
+      "dislikedUsers": [],
+      "likedBy": []
+    },
+    {
+      "id": 5,
+      "name": "JessicaRabbit24",
+      "desc": "PC",
+      "image": "6.jpg",
+      "likedUsers": [],
+      "dislikedUsers": [],
+      "likedBy": []
+    },
+    {
+      "id": 6,
+      "name": "KRisPBacon",
+      "desc": "Xbox",
+      "image": "7.jpg",
+      "likedUsers": [],
+      "dislikedUsers": [],
+      "likedBy": []
+    }
+  ]
+  
