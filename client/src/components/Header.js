@@ -1,16 +1,24 @@
 import React from 'react';
 import Logo from './Logo';
+import CreateUser from './Users/UserCreate';
+import Registration from './auth/Registration';
+
+
+
 
 const Header = () => (
   <header>
     <div className="fl">
-      <button type="button">
+     
+      <CreateUser />
         <img src="/images/misc/user.png" alt="User Settings" />
-      </button>
+      <Registration />  
+    
     </div>
 
     <div className="fl">
       <Logo />
+     
     </div>
 
     <div className="fl">

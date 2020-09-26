@@ -2,13 +2,31 @@ import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Person from './components/Person';
+import createUser from './components/Users/UserCreate';
 import Lonely from './components/Lonely';
 import data from './data.json';
+import { Link, BrowserRouter as Router } from 'react-router-dom'
+
+
+
+
+function Users() {
+  return (
+    <Router>
+    <div className="App">
+      <h1>User Tracker</h1>
+      <Link to="/users">Users</Link>
+      <createUser />
+      </div>
+    </Router>
+
+ 
+  )
+}
 
 const App = () => {
   const [people, setPeople] = useState(data);
   const [likedUsers, setLikedUsers] = useState([]);
-  const [superLikedUsers, setSuperLikedUsers] = useState([]);
   const [dislikedUsers, setDislikedUsers] = useState([]);
   const activeUser = 0;
 
@@ -18,7 +36,6 @@ const App = () => {
   const modifySuperficialChoices = (userId, action) => {
     const newPeople = [...people];
     const newLikedUsers = [...likedUsers];
-    const newSuperLikedUsers = [...superLikedUsers];
     const newDislikedUsers = [...dislikedUsers];
 
     switch (action) {
@@ -37,15 +54,6 @@ const App = () => {
           newDislikedUsers.push(data[userId]);
 
           setDislikedUsers(newLikedUsers);
-          setPeople(removedPersonFromDataSrc(people, userId));
-        }
-        break;
-      case 'ADD_TO_SUPERLIKED_USERS':
-        if (!people[activeUser].superLikedUsers.includes(userId)) {
-          newPeople[activeUser].superLikedUsers.push(userId);
-          newSuperLikedUsers.push(data[userId]);
-
-          setSuperLikedUsers(newSuperLikedUsers);
           setPeople(removedPersonFromDataSrc(people, userId));
         }
         break;
@@ -68,7 +76,7 @@ const App = () => {
         <Lonely
           activeUserImage={people[activeUser].image}
           likedUsers={likedUsers}
-          superLikedUsers={superLikedUsers}
+         
         />
       )}
     </div>

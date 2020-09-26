@@ -12,17 +12,25 @@ end
 
     def create
         #creates new user
-        user = User.create(user_params)
-        if user.valid?
-            #respond with our new user
-            render json: user
+        user = User.create!(
+            email: params['user']['email'],
+            password: params['user']['password'],
+            password_confirmation: params['user']['password_confirmation']
+        )
+        if user 
+            session[:user_id] = user.id
+            render json: {
+                status: :created,
+                user: user
+            }
         else
-            render json: user.errors, status: :unprocessable_entity
+            render json: { status: 500 }
         end
     end
 
     # Handle strong parameters
     def user_params
-        params.require(:cat).permit(:name, :age, :about, :platform, :image)
+        p params
+        params.require(:user).permit(:name, :age, :about, :platform, :image)
     end
 end
