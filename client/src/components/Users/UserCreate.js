@@ -26,7 +26,7 @@ export default class UserCreate extends Component {
 render() {
     return (
         <div>
-            <button onClick={this.createUser}>Test</button>
+            <button onClick={this.createUser}></button>
         </div>
     )
 }
