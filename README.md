@@ -20,7 +20,7 @@ My general approach to creating this app started with what I wanted this app to 
 While running into error after error I decided to depoloy my app to heroku and style my app so I could get that out of the way.
 
 ## Wireframes
-<img src='Wireframes.jpg'>
+<img src="Wireframes.jpg">
     
 ## UserStories
 - Visitor arrives on landing page with ability to sign-in or register.
