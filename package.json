@@ -1,0 +1,8 @@
+{
+  "name": "Qpanions",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/jonathanrawlingsgit/Q-panions.git",
+  "license": "MIT",
+  "scripts": {"heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix client && npm run build --prefix client"}
+}
