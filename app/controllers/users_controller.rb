@@ -12,11 +12,9 @@ end
 
     def create
         #creates new user
-        user = User.create!(
-            email: params['user']['email'],
-            password: params['user']['password'],
-            password_confirmation: params['user']['password_confirmation']
-        )
+        # require "pry"
+        # binding.pry
+        user =  User.create!(email: params['user']['email'],password: params['user']['password_confirmation'])
         if user 
             session[:user_id] = user.id
             render json: {

@@ -35,7 +35,7 @@ export default class Registration extends Component {
                     password_confirmation: password_confirmation
                 }
             },
-            { withCredentials: true }
+            
         )
         .then(response => {
             if (response.data.status === 'created') {
@@ -61,7 +61,7 @@ export default class Registration extends Component {
                         placeholder="Password confirmation" value={this.state.password_confirmation}
                         onChange={this.handleChange} required />
 
-                    <button type="submit">Register</button>
+                    <button  type="submit">Register</button>
                 </form>
 
             </div>

@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header';
 import Person from './components/Person';
-import createUser from './components/Users/UserCreate';
+// import createUser from './components/Users/UserCreate';
 import Lonely from './components/Lonely';
 import data from './data.json';
 import { Link, BrowserRouter as Router } from 'react-router-dom'
@@ -10,19 +10,19 @@ import { Link, BrowserRouter as Router } from 'react-router-dom'
 
 
 
-function Users() {
-  return (
-    <Router>
-    <div className="App">
-      <h1>User Tracker</h1>
-      <Link to="/users">Users</Link>
-      <createUser />
-      </div>
-    </Router>
+// function Users() {
+//   return (
+//     <Router>
+//     <div className="App">
+//       <h1>User Tracker</h1>
+//       <Link to="/users">Users</Link>
+//       <createUser />
+//       </div>
+//     </Router>
 
  
-  )
-}
+//   )
+// }
 
 const App = () => {
   const [people, setPeople] = useState(data);
