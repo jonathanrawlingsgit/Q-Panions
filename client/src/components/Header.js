@@ -6,13 +6,14 @@ import Registration from './auth/Registration';
 
 
 
-const Header = () => (
+const Header = ({createUser, activeUser}) => (
   <header>
     <div className="fl">
      
-      <CreateUser />
+      
         <img src="/images/misc/user.png" alt="User Settings" />
-      <Registration />  
+        {activeUser ? null :  <Registration createUser={createUser} /> }
+        
     
     </div>
 

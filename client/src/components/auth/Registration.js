@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 export default class Registration extends Component {
     constructor(props) {
@@ -12,40 +12,22 @@ export default class Registration extends Component {
             registrationErrors: ''
         }
 
-        this.handleSubmit = this.handleSubmit.bind(this);
+        
         this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+    }
+
+    handleSubmit(event) {
+        event.preventDefault() 
+        this.props.createUser(this.state)
+
+
     }
 
     handleChange(event) {
         this.setState({
             [event.target.name]: event.target.value
         })
-    }
-
-    handleSubmit(event) {
-       const { email, password, password_confirmation } = this.state;
-        
-       axios 
-        .post(
-            "http://localhost:3001/registrations",
-            {
-                user: {
-                    email: email,
-                    password: password,
-                    password_confirmation: password_confirmation
-                }
-            },
-            
-        )
-        .then(response => {
-            if (response.data.status === 'created') {
-           this.props.handleSuccessfulAuth(response.data);
-            }
-        })
-        .catch(error => {
-            console.log( "registration error", error)
-        });
-        event.preventDefault();
     }
 
     render() {
@@ -60,8 +42,12 @@ export default class Registration extends Component {
                     <input type="password" name="password_confirmation"
                         placeholder="Password confirmation" value={this.state.password_confirmation}
                         onChange={this.handleChange} required />
+                    
 
                     <button  type="submit">Register</button>
+                    <div>
+                    <input typer="about" name="about" placeholder="about" value={this.state.about} onChange={this.handleChange}/>
+                    </div>
                 </form>
 
             </div>

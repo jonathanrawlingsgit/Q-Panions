@@ -5,8 +5,10 @@ import Person from './components/Person';
 // import createUser from './components/Users/UserCreate';
 import Lonely from './components/Lonely';
 import data from './data.json';
-import Login from './components/auth/Login'
+import Registration from './components/auth/Registration';
+// import Login from './components/auth/Login'
 // import { Link, BrowserRouter as Router } from 'react-router-dom'
+
 
 
 
@@ -26,10 +28,30 @@ import Login from './components/auth/Login'
 // }
 
 const App = () => {
+  const createUser = (opts) => {
+    fetch('/users', {
+        method: 'post',
+        headers: {"Content-Type": 'application/json'},
+        body: JSON.stringify({user: opts}) //package to backend
+    }).then(function (response) {
+        console.log(response)
+        return response.json();
+     }).then(function (data) {
+       setActiveUser(data.user)
+
+  
+    //     ChromeSamples.log('Created Gist:', data.html_url);
+    });
+  
+  }
+
+
+
+  
   const [people, setPeople] = useState(data);
   const [likedUsers, setLikedUsers] = useState([]);
   const [dislikedUsers, setDislikedUsers] = useState([]);
-  const activeUser = 0;
+  const [activeUser, setActiveUser] = useState(null)
 
   const removedPersonFromDataSrc = (peopleSource, userId) =>
     peopleSource.filter(user => user.id !== userId);
@@ -65,7 +87,7 @@ const App = () => {
 
   return (
     <div className="app">
-      <Header />
+      <Header createUser={createUser} activeUser={activeUser}/>
       {people[1] ? (
         <Person
           key={people[1].id}
