@@ -5,5 +5,5 @@ Rails.application.routes.draw do
 
   
   end
-  post "/registrations", to: "users#create"
-end
+  # post "/registrations", to: "users#create"
+# end
