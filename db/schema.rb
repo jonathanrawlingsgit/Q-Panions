@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 2020_09_23_193150) do
     t.integer "age"
     t.text "about"
     t.string "image"
-    t.string "platform"
+    t.string "auth_token"
     t.string "password_digest"
     t.string "email"
     t.datetime "created_at", precision: 6, null: false
