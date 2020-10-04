@@ -1,5 +1,5 @@
 # Q-Panions
-Heroku Link: https://polar-reef-22832.herokuapp.com/
+Heroku Link: https://thawing-anchorage-93450.herokuapp.com/
 <img src="Coverphoto2.jpg">
 
 ## Technologies used
